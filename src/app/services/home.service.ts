@@ -18,7 +18,7 @@ export class HomeService {
 getQuery(queryUrl: string) {
 const URL = `https://api.spotify.com/v1/playlists/${queryUrl}?limit=8`;
 const headers = new HttpHeaders({
-  'Authorization': 'Bearer BQBSQ1VgIlUJDJmd8xKgtYOV4PQVS9lWjRIB8WD8RlvjXfm32RixW-69ccOt87lY1-G_tSWeZEH0vpXAVgU'
+  'Authorization': 'Bearer myToken'
 });
 
 return this.http.get(URL, { headers });
