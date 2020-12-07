@@ -1,0 +1,477 @@
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Rankings</h2>
+    <mat-tab-group>
+        <mat-tab label="Rankings for Day">
+            <mat-tab-group>
+                <mat-tab label="Tracks">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadayD">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadayS">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Albums">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadayDAl">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadaySAl">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Artists">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadayDAr">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Day Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of datadaySAr">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+
+        </mat-tab>
+        <mat-tab label="Rankings for Week">
+            <mat-tab-group>
+                <mat-tab label="Tracks">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthTD">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthTS">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Albums">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthALD">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthALS">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Artist">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthAD">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Week Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let _tracks of dataMonthAS">
+                                <tr>
+
+                                    <td class="left">{{_tracks.item1}}</td>
+                                    <td class="right">{{_tracks.item3}}</td>
+                                    <td class="left">{{_tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-tab>
+        <mat-tab label="Rankings for Month">
+            <mat-tab-group>
+                <mat-tab label="Tracks">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthTD">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthTS">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Albums">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthALD">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthALS">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+                <mat-tab label="Artist">
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Deezer</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthAD">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apid vaule="deezer">
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="table-responsive-sm mt-2">
+                        <h2 matSubheader>Rankings for Month Spotify</h2>
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+
+                                    <th>Name</th>
+                                    <th class="right">Type</th>
+                                    <th class="left">Votes</th>
+                                </tr>
+                            </thead>
+                            <tbody *ngFor="let tracks of dataMonthAS">
+                                <tr>
+
+                                    <td class="left">{{tracks.item1}}</td>
+                                    <td class="right">{{tracks.item3}}</td>
+                                    <td class="left">{{tracks.item2}}</td>
+                                </tr>
+                                <input type="hidden" #type value="track">
+                                <input type="hidden" #apis vaule="spotify">
+                            </tbody>
+                        </table>
+
+
+                    </div>
+                </mat-tab>
+            </mat-tab-group>
+        </mat-tab>
+    </mat-tab-group>
+</div>

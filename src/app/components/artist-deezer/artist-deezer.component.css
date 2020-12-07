@@ -1,0 +1,27 @@
+img {
+    width: 150px;
+    height: 150px;
+}
+
+button {
+    outline: none;
+}
+
+audio {
+    outline: none;
+}
+
+thead {
+    background-color: rgb(12, 184, 98);
+    color: white;
+}
+
+tbody {
+    background-color: #F1F5F5;
+}
+
+table {
+    border-collapse: collapse;
+    border-radius: 1em;
+    overflow: hidden;
+}

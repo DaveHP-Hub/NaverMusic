@@ -1,0 +1,26 @@
+<div class="container mt-4 mb-3">
+    <div class="row">
+        <mat-icon class="ml-5 mt-2 mr-1">search</mat-icon>
+        <div class="col-md-6">
+            <input #query type="text" (keyup)="searchInput(query.value)" class="form-control" placeholder="Buscar artista...">
+
+        </div>
+    </div>
+
+</div>
+
+<div class="container mt-3 mb-3">
+    <div class="row">
+        <div (click)="seeArtist(artist)" class="col-lg-3 col-md-3 col-sm-6 mt-4 puntero" *ngFor="let artist of artistSearch">
+            <div class="card profile-card-5">
+                <div class="card-img-block">
+                    <img class="card-img-top" [src]="artist.images | noimage" alt="Card image cap">
+
+                </div>
+                <div class="card-body">
+                    <h5 class="card-text">{{artist.name}}</h5>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

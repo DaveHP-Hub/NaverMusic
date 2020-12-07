@@ -1,0 +1,79 @@
+<mat-divider></mat-divider>
+
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Top Artists from Spotify</h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-xs-12 mt-4" *ngFor="let new of topArtists.slice(0,8);">
+            <div class="card profile-card-5">
+                <div class="card-img-block">
+                    <img id="element" class="card-img-top puntero" data-toggle="tooltip" title="ver más del artista" [src]="new.track.album.images[0].url" alt="Card image cap">
+
+                    <div class="row ml-3 mt-1">
+                        <div class="col"><button mat-icon-button class="colorB" (click)="favPost(typefav.value,idfav.value,namefav.value,picture.value,namesong.value, nameapp.value, uri.value)"> <mat-icon>favorite_border</mat-icon></button></div>
+                        <div class="col"><button mat-icon-button class="colorB" (click)="votePosts(typefav.value,idfav.value,namefav.value,picture.value, nameapp.value)"> <mat-icon>thumb_up_alt</mat-icon></button></div>
+
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <h5 class="card-title">{{new.track.album.name}}</h5>
+                    <span class="card-text">{{new.track.artists[0].name}}<br>
+                    <input type="hidden" #idfav value="{{new.track.artists[0].id}}">
+                    <input type="hidden" #typefav value="{{new.track.artists[0].type}}">
+                    <input type="hidden" #namefav value="{{new.track.artists[0].name}}">
+                    <input type="hidden" #picture value="{{new.track.artists[0].id}}">
+                    <input type="hidden" #namesong value="{{new.track.name}}">
+                    <input type="hidden" #nameapp value="spotify">
+                    <input type="hidden" #uri value="{{new.track.artists[0].uri}}">
+                    
+                    </span>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+<mat-divider></mat-divider>
+
+
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Top Artists from Deezer</h2>
+    <div class="row">
+        <div class="col-lg-3 col-md-3 col-xs-12 mt-4" *ngFor="let new of topArtistDeezer">
+            <div class="card profile-card-5">
+                <div class="card-img-block">
+                    <img id="element" class="card-img-top puntero" data-toggle="tooltip" title="ver más del artista" [src]="new.album.cover_big" alt="Card image cap">
+
+                    <div class="row ml-3 mt-1">
+                        <div class="col"><button mat-icon-button class="colorB" (click)="favPostD(typefav.value,idfav.value,namefav.value,picture.value,namesong.value, nameapp.value, uri.value)"> <mat-icon>favorite_border</mat-icon></button></div>
+                        <div class="col"><button mat-icon-button class="colorB" (click)="votePostD(typefav.value,idfav.value,namefav.value,picture.value, nameapp.value)"> <mat-icon>thumb_up_alt</mat-icon></button></div>
+
+                    </div>
+                </div>
+                <div class="card-body">
+
+                    <h5 class="card-title">{{new.album.title}}</h5>
+                    <span class="card-text">{{new.artist.name}}<br>
+                    <input type="hidden" #idfav value="{{new.artist.id}}">
+                    <input type="hidden" #typefav value="{{new.artist.type}}">
+                    <input type="hidden" #namefav value="{{new.artist.name}}">
+                    <input type="hidden" #picture value="{{new.artist.id}}">
+                    <input type="hidden" #namesong value="{{new.title}}">
+                    <input type="hidden" #nameapp value="deezer">
+                    <input type="hidden" #uri value="">
+                    
+                    </span>
+
+
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

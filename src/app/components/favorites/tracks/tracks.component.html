@@ -1,0 +1,61 @@
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Favorites Artists from Spotify</h2>
+    <div class="table-responsive-sm mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+
+                    <th>Song</th>
+                    <th class="right">Play song</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let _tracks of tracksspotify">
+                <tr>
+
+                    <td class="left">{{_tracks.songFav}}</td>
+                    <td class="right">
+                        <iframe [src]="_tracks.uri | domseguro " width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-5">
+
+        </div>
+    </div>
+
+</div>
+<mat-divider></mat-divider>
+
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Favorites Tracks from Deezer</h2>
+    <div class="table-responsive-sm mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Artist</th>
+                    <th>Song</th>
+                    <th class="right">Play song</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let _tracks of tracksdeezer">
+                <tr>
+                    <td class="left strong">{{_tracks.nameFav}}</td>
+                    <td class="left">{{_tracks.songFav}}</td>
+                    <td class="right">
+                        <iframe scrolling="no" frameborder="0" allowTransparency="true" [src]="id.value | domsegurod" width="300" height="100"></iframe>
+                        <input type="hidden" #id value="{{_tracks.idGetFav}}">
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-5">
+
+        </div>
+    </div>

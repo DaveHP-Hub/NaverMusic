@@ -1,0 +1,49 @@
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Favorites Albums from Spotify</h2>
+    <div class="table-responsive-sm mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album</th>
+                    <th class="right">Play album</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let _tracks of albumspotify">
+                <tr>
+                    <td class="left strong">{{_tracks.nameFav}}</td>
+
+                    <td class="right">
+                        <iframe scrolling="no" frameborder="0" allowTransparency="true" [src]="_tracks.uri | domseguro" width="280" height="80"></iframe>
+
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+</div>
+<mat-divider></mat-divider>
+<div class="container mt-3 mb-3">
+    <h2 matSubheader>Favorites Albums from Deezer</h2>
+    <div class="table-responsive-sm mt-2">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Album</th>
+                    <th class="right">Play album</th>
+                </tr>
+            </thead>
+            <tbody *ngFor="let _tracks of albumsdeezer">
+                <tr>
+                    <td class="left strong">{{_tracks.nameFav}}</td>
+
+                    <td class="right">
+                        <iframe scrolling="no" frameborder="0" allowTransparency="true" [src]="uri.value | domplayerdeezer" width="400" height="100"></iframe>
+
+                    </td>
+                </tr>
+                <input type="hidden" #uri value="{{_tracks.idGetFav}}">
+            </tbody>
+        </table>
+    </div>
+</div>

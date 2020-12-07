@@ -1,0 +1,8 @@
+button {
+    outline: none;
+    align-items: center !important;
+}
+
+.card {
+    box-shadow: 8px 3px 3px gainsboro;
+}

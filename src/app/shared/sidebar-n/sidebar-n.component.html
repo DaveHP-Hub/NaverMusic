@@ -1,0 +1,211 @@
+<mat-sidenav-container class="sidenav-container mat-app-background">
+    <mat-sidenav #drawer class="sidenav" fixedInViewport [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'" [opened]="(isHandset$ | async) === false">
+        <mat-toolbar class="expand">
+            <div class="container-fluid">
+
+                <img [src]="photo" alt="imageUser" class="rounded-circle">
+                <div class="container">
+                    <h2>Welcome: <br>@{{this.registerService.userlocal}}
+                    </h2>
+                </div>
+
+            </div>
+        </mat-toolbar>
+
+        <mat-nav-list>
+
+            <mat-divider></mat-divider>
+
+            <h3 matSubheader>Pages</h3>
+
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+                <mat-icon>leaderboard
+                </mat-icon>
+                Top Charts</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/topartists">
+                <mat-icon>nature_people</mat-icon>
+                Artists</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/topalbums">
+                <mat-icon>collections</mat-icon>
+                Albums</a>
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="/rankings">
+                <mat-icon>new_releases
+                </mat-icon>
+                Rankings</a>
+
+            <mat-divider></mat-divider>
+
+            <h3 *ngIf="this.registerService.autentificado" matSubheader>User</h3>
+
+            <mat-accordion class="mat-accordion" *ngIf="this.registerService.autentificado">
+                <mat-expansion-panel hideToggle>
+                    <mat-expansion-panel-header>
+                        <mat-panel-title>
+                            <mat-icon>favorite_border
+                            </mat-icon>
+                            Favorites
+                        </mat-panel-title>
+                        <mat-panel-description>
+                        </mat-panel-description>
+                    </mat-expansion-panel-header>
+                    <a *ngIf="this.registerService.autentificado" mat-list-item routerLinkActive="list-item-active" routerLink="/favorites/tracksuser">
+                        <mat-icon>favorite_border
+                        </mat-icon>
+                        Tracks
+                    </a>
+                    <a *ngIf="this.registerService.autentificado" mat-list-item routerLinkActive="list-item-active" routerLink="/favorites/artistsuser">
+                        <mat-icon>favorite_border
+                        </mat-icon>
+                        Artists
+                    </a>
+
+                    <a *ngIf="this.registerService.autentificado" mat-list-item routerLinkActive="list-item-active" routerLink="/favorites/albumsuser">
+                        <mat-icon>favorite_border
+                        </mat-icon>
+                        Albums
+                    </a>
+                </mat-expansion-panel>
+                <mat-expansion-panel (opened)="panelOpenState = true" (closed)="panelOpenState = false">
+                </mat-expansion-panel>
+            </mat-accordion>
+
+            <a *ngIf="this.registerService.autentificado" mat-list-item routerLinkActive="list-item-active" routerLink="/updateuser">
+                <mat-icon>settings
+                </mat-icon>
+                Settings
+            </a>
+
+        </mat-nav-list>
+
+    </mat-sidenav>
+    <mat-sidenav-content>
+        <mat-toolbar class="primary">
+            <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$ | async">
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+
+            <a mat-list-item routerLinkActive="list-item-active" routerLink="">
+                Naver <mat-icon>play_circle_filled
+                </mat-icon>Music
+                
+            </a>
+
+
+
+            <span style="flex:auto;"></span>
+
+
+            <button mat-icon-button>
+                <mat-icon id="search" routerLink="search">search</mat-icon>
+            </button>
+
+            <button mat-icon-button mat-button [matMenuTriggerFor]="menu">
+                            <mat-icon>account_circle</mat-icon>
+                        </button>
+            <mat-menu #menu="matMenu">
+                <button *ngIf="!this.registerService.autentificado" mat-menu-item routerLink="login">Iniciar Sesión</button>
+                <button *ngIf="!this.registerService.autentificado" mat-menu-item routerLink="register">Registrar</button>
+                <button *ngIf="this.registerService.autentificado" mat-menu-item (click)="logOut()">Cerrar Sesión</button>
+            </mat-menu>
+
+
+
+
+
+
+        </mat-toolbar>
+
+
+        <router-outlet></router-outlet>
+
+
+
+
+    </mat-sidenav-content>
+    <app-footer></app-footer>
+</mat-sidenav-container>
+
+
+<style>
+    button {
+        list-style-type: none !important;
+        background-color: transparent !important;
+        outline: none;
+    }
+    
+    mat-panel-title {
+        color: rgb(12, 184, 98);
+    }
+    
+    .menu {
+        size: 16px;
+    }
+    
+    img {
+        width: 90px;
+        height: 90px;
+        border-color: rgb(12, 184, 98);
+        ;
+        border: 2px inset rgb(12, 184, 98);
+        ;
+        padding: 0px;
+        margin-left: 10px;
+    }
+    
+    .mat-sidenav {
+        width: 180px;
+        height: 100%;
+    }
+    
+    .expand {
+        margin-top: 15px;
+        height: 150px;
+        padding: 22px;
+        background-color: white;
+    }
+    
+    .mat-toolbar {
+        color: rgb(12, 184, 98);
+    }
+    
+    .mat-list-item {
+        color: rgb(12, 184, 98);
+    }
+    
+    .primary {
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+        border-radius: 1px solid white;
+    }
+    
+    h2 {
+        text-align: center;
+        font-size: 13px;
+        color: grey;
+    }
+    
+    .mat-icon {
+        font-size: 20px;
+    }
+    
+    a {
+        font-size: 20px;
+        text-decoration: none;
+    }
+    
+    .mat-sidenav {
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.63);
+    }
+    
+    .btnNaver {
+        font-size: 20px;
+    }
+    
+    .btnNaver:hover {
+        border: 0px solid transparent !important;
+    }
+    
+    #search {
+        outline: none;
+    }
+</style>

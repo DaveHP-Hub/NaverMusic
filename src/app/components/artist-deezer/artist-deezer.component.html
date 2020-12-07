@@ -1,0 +1,50 @@
+<!--DEEZER ARTISTS-->
+<div class="container mt-3 mb-3">
+    <div class="row">
+
+        <div class="col-4 ml-5 mt-3">
+            <img class="profile-img rounded-circle img-thumbnail" [src]="artistGetDeezer.picture_big">
+        </div>
+        <div class="col mt-5">
+            <h3>{{artistGetDeezer.name}}</h3>
+            <p>
+                <a [href]="artistGetDeezer.link" target="_blanck">Ir a la pagina del Artista</a>
+            </p>
+        </div>
+        <div class="col-4 text-center">
+            <button routerLink="/" mat-icon-button>
+             <mat-icon>reply</mat-icon>
+             Regresar
+         </button>
+        </div>
+    </div>
+    <div class="table-responsive-sm mt-2">
+        <table class="table table-striped border">
+            <thead>
+                <tr>
+                    <th>Album</th>
+                    <th>Song</th>
+                    <th class="right">Play song</th>
+
+                </tr>
+            </thead>
+            <tbody *ngFor="let tracks of topTracksDeezer">
+                <tr>
+
+                    <td class="left strong">{{tracks.album.title}}</td>
+                    <td class="left">{{tracks.title}}</td>
+                    <td class="right">
+                        <audio *ngIf="!this.registerS.autentificado" [src]="tracks.preview" controls></audio>
+                        <iframe *ngIf="this.registerS.autentificado" scrolling="no" frameborder="0" allowTransparency="true" [src]="id.value | domsegurod" width="300" height="80"></iframe>
+                        <input type="hidden" #id value="{{tracks.id}}">
+                    </td>
+                </tr>
+
+            </tbody>
+        </table>
+    </div>
+    <div class="row">
+        <div class="col-lg-4 col-sm-5">
+
+        </div>
+    </div>

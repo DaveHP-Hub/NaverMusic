@@ -1,0 +1,93 @@
+<div class="container mt-1">
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <div class="fadeIn first">
+                <h2 matSubheader>Actualizar Datos</h2>
+            </div>
+            <form [formGroup]="frmUpdate" (ngSubmit)="UpdateUser(u.value,em.value, pwd.value, g.value, na.value, app.value, pa.value, np.value )">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input #u class="form-control" type="text" value="{{user.username}}" required>
+
+                </div>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" #na value="{{user.forename}}" class="form-control" placeholder="Nombre" type="text" required>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" #app value="{{user.surname}}" class="form-control" placeholder="Apellido" type="text" required>
+                </div>
+
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="" #em value="{{user.email}}" class="form-control" placeholder="Email" type="email" required>
+                </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <!-- <select class="custom-select" style="max-width: 120px;">
+                <option selected="">+971</option>
+                <option value="1">+972</option>
+                <option value="2">+198</option>
+                <option value="3">+701</option>
+            </select>-->
+                    <input name="" #np value="{{user.numberphone}}" class="form-control" placeholder="Telefono" type="text" required>
+                </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+                    </div>
+                    <select class="form-control" #g value="{{user.gender}}">
+                <option>{{user.gender}}</option>
+                <option *ngFor="let dato of datos">
+                    {{dato}}
+                </option>
+                
+                
+            </select>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="far fa-flag"></i> </span>
+                    </div>
+                    <select class="form-control" #pa value="{{user.nationality}}">
+                <option>{{user.nationality}}</option>
+                <option *ngFor="let pais of datos_">
+                    {{pais}}
+                </option>
+            
+              
+            </select>
+                </div>
+                <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input #pwd value="{{user.pwd}}" class="form-control" placeholder="Crea una contraseña" type="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block"> Update User</button>
+                </div>
+
+            </form>
+        </article>
+    </div>
+    <!-- card.// -->
+
+</div>
+<!--container end.//-->

@@ -1,0 +1,93 @@
+<div class="container mt-1">
+    <div class="card bg-light">
+        <article class="card-body mx-auto" style="max-width: 400px;">
+            <div class="fadeIn first">
+                <h2 matSubheader>Crea una cuenta en Naver Music</h2>
+            </div>
+            <form [formGroup]="frmRegister" (ngSubmit)="AddUser(frmRegister.value)">
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Username" type="text" formControlName="username" required>
+                </div>
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Nombre" type="text" formControlName="forename" required>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-user"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Apellido" type="text" formControlName="surname" required>
+                </div>
+
+
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-envelope"></i> </span>
+                    </div>
+                    <input name="" class="form-control" placeholder="Email" type="email" formControlName="email" required>
+                </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-phone"></i> </span>
+                    </div>
+                    <!-- <select class="custom-select" style="max-width: 120px;">
+                <option selected="">+971</option>
+                <option value="1">+972</option>
+                <option value="2">+198</option>
+                <option value="3">+701</option>
+            </select>-->
+                    <input name="" class="form-control" placeholder="Telefono" type="text" formControlName="numberphone" required>
+                </div>
+                <!-- form-group// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fas fa-venus-mars"></i> </span>
+                    </div>
+                    <select class="form-control" formControlName="gender">
+                <option>Genero</option>
+                <option *ngFor="let dato of datos">
+                    {{dato}}
+                </option>
+                
+                
+            </select>
+                </div>
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="far fa-flag"></i> </span>
+                    </div>
+                    <select class="form-control" formControlName="nationality">
+                <option>País</option>
+                <option *ngFor="let pais of datos_">
+                    {{pais}}
+                </option>
+            
+              
+            </select>
+                </div>
+                <!-- form-group end.// -->
+                <div class="form-group input-group">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text"> <i class="fa fa-lock"></i> </span>
+                    </div>
+                    <input class="form-control" placeholder="Crea una contraseña" type="password" formControlName="pwd" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn btn-success btn-block"> Crear cuenta </button>
+                </div>
+                <!-- form-group// -->
+                <p class="text-center">¿Ya tienes un cuenta? <a routerLink="/login">Ingresa aquí</a> </p>
+            </form>
+        </article>
+    </div>
+    <!-- card.// -->
+
+</div>
+<!--container end.//-->
